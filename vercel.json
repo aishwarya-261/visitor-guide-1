@@ -1,9 +1,14 @@
 {
   "routes": [
-    {
-      "src": "^/cgi-bin(/.*)?$",
-      "status": 404
-    }
+    { "src": "/cgi-bin(.*)", "status": 404 },
+    { "src": "/admin(.*)", "status": 404 },
+    { "src": "/uploads(.*)", "status": 404 },
+    { "src": "/api(.*)", "status": 404 },
+    { "src": "/server(.*)", "status": 404 },
+    { "src": "/private(.*)", "status": 404 },
+    { "src": "/internal(.*)", "status": 404 },
+    { "src": "/backup(.*)", "status": 404 },
+    { "src": "/config(.*)", "status": 404 },
+    { "src": "/database(.*)", "status": 404 }
   ]
 }
-
