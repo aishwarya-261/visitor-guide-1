@@ -1,9 +1,9 @@
 {
-  "redirects": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "https://visitor-guide.vercel.app/$1",
-      "permanent": true
+      "src": "^/cgi-bin(/.*)?$",
+      "status": 404
     }
   ]
 }
+
