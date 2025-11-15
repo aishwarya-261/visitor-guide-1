@@ -1,14 +1,20 @@
 {
   "routes": [
-    { "src": "/cgi-bin(.*)", "status": 404 },
-    { "src": "/admin(.*)", "status": 404 },
-    { "src": "/uploads(.*)", "status": 404 },
-    { "src": "/api(.*)", "status": 404 },
-    { "src": "/server(.*)", "status": 404 },
-    { "src": "/private(.*)", "status": 404 },
-    { "src": "/internal(.*)", "status": 404 },
-    { "src": "/backup(.*)", "status": 404 },
-    { "src": "/config(.*)", "status": 404 },
-    { "src": "/database(.*)", "status": 404 }
+    { "src": "/cgi-bin.*", "status": 404 },
+    { "src": "/admin.*", "status": 404 },
+    { "src": "/secret.*", "status": 404 },
+    { "src": "/hidden.*", "status": 404 }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self';" }
+      ]
+    }
   ]
 }
